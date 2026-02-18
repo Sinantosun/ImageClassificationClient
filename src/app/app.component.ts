@@ -12,11 +12,12 @@ import { PredictionModel } from './Models/prediction-model';
 })
 export class AppComponent {
 
-  private readonly API_URL = 'https://localhost:7235/api/classification/classify';
+  private readonly API_URL = 'https://localhost:7235/api/classification/predict';
 
   previewUrl = '';
   selectedFile: File | null = null;
   hasResult = false;
+  
   predictionResult: PredictionModel = new PredictionModel();
 
   constructor(private http: HttpClient) { }
@@ -30,7 +31,7 @@ export class AppComponent {
     this.hasResult = false;
 
     if (this.predictionResult) {
-      this.predictionResult = new PredictionModel(); ;
+      this.predictionResult = new PredictionModel();;
     }
 
   }
@@ -43,12 +44,10 @@ export class AppComponent {
 
     this.http.post<PredictionModel>(this.API_URL, formData)
       .subscribe({
-        next: (response) => {
-          this.predictionResult = response;
+        next: (response: any) => {
+          this.predictionResult = response.payload;
           this.hasResult = true;
-          console.log(response);
-        },
-        error: (error) => console.error('Image analysis failed:', error)
+        }
       });
   }
 }
