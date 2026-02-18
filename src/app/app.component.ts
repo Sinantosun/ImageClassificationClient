@@ -17,7 +17,7 @@ export class AppComponent {
   previewUrl = '';
   selectedFile: File | null = null;
   hasResult = false;
-  
+
   predictionResult: PredictionModel = new PredictionModel();
 
   constructor(private http: HttpClient) { }
@@ -47,6 +47,9 @@ export class AppComponent {
         next: (response: any) => {
           this.predictionResult = response.payload;
           this.hasResult = true;
+        },
+        error: (err) => {
+          alert(err.error.errors[0].errorMessage)
         }
       });
   }
