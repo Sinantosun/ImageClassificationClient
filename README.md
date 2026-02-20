@@ -1,59 +1,24 @@
-# ImageClassificationClient
+Image Classification Client (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Bu proje, ML.NET ile eğitilen görsel sınıflandırma modelinin sonuçlarını kullanıcıya sunan, modern ve kullanıcı dostu bir Angular arayüzüdür. Kullanıcıların görselleri kolayca yükleyip saniyeler içinde yapay zeka sonuçlarını almasını sağlar.
 
-## Development server
+✨ Özellikler
 
-To start a local development server, run:
+- Hızlı Tahmin: Yüklenen görselleri Web API'ye göndererek anlık sonuç döndürür.
 
-```bash
-ng serve
-```
+- Görsel Önizleme: Kullanıcı dosyayı seçtiği anda ekranda önizlemesini görebilir.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Güven Skoru Gösterimi: Modelin tahmin ettiği nesneyle birlikte doğruluk oranını (%) görselleştirir.
 
-## Code scaffolding
+- State Management: API'den gelen BaseResult yapısını yöneterek hata veya başarı durumlarını kullanıcıya bildirir.
+------------------------------------------------------------------------
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+İlgili Projeler
 
-```bash
-ng generate component component-name
-```
+Bu uygulama, aşağıdaki backend projesi ile birlikte çalışmak üzere tasarlanmıştır: https://github.com/Sinantosun/ImageClassification
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+------------------------------------------------------------------------
 
-```bash
-ng generate --help
-```
+Detaylı Blog Yazısı
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Projenin frontend ve backend arasındaki entegrasyon süreçlerini blogumda okuyabilirsiniz: https://sinantosun.com/blog-detayi/mlnet-gorsel-siniflandirma
