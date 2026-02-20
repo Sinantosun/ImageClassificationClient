@@ -1,13 +1,13 @@
 <div class="container">
     <div class="upload-container text-center">
-        <h2 class="mb-4">🔍 SharpVision ML</h2>
+        <h2 class="mb-4">🔍 ImageClassification ML</h2>
         <p class="text-muted">Analiz etmek istediğiniz görseli yükleyin (.NET Core AI Servisi)</p>
 
         <div class="mb-3">
             <input class="form-control" type="file" (input)="onFileSelected($event)" id="imageInput" accept="image/*">
         </div>
 
-        <img id="imagePreview" *ngIf="previewUrl" [src]="previewUrl" alt="Önizleme">
+        <img id="imagePreview" *ngIf="previewUrl" width="400px" height="400px" [src]="previewUrl" alt="Önizleme">
 
         <div class="d-grid gap-2 mt-4">
             <button class="btn btn-primary btn-lg" id="uploadBtn" (click)="analyzeImage()">
